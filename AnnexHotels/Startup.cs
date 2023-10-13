@@ -1,7 +1,13 @@
+using AnnexHotels.Core.Implementations;
+using AnnexHotels.Core.Interfaces;
+using AnnexHotels.Data.DbContexts;
+using AnnexHotels.Data.Interfaces;
+using AnnexHotels.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace AnnexHotels
 {
@@ -26,6 +33,11 @@ namespace AnnexHotels
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AnnexHotelsDbContext>(dbContextoption => 
+                dbContextoption.UseSqlServer(Configuration.GetConnectionString("AnnexHotelsDbConnection")));
+            services.AddScoped<IHotelRepository, HotelRepository>();
+            services.AddScoped<IHotelService, HotelService>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
