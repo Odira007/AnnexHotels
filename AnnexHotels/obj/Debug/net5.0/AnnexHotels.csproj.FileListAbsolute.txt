@@ -1,4 +1,3 @@
-C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\appsettings.json
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.exe
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.deps.json
@@ -73,3 +72,6 @@ C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\ne
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.Dtos.dll
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.Core.pdb
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.Dtos.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

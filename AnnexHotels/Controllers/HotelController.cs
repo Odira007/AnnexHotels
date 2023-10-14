@@ -76,6 +76,7 @@ namespace AnnexHotels.Controllers
             return NoContent();
         }
 
+        [HttpPatch]
         public async Task<ActionResult> UpdatePartialHotelAsync(int hotelId, JsonPatchDocument<HotelUpdateDto> patchDocument)
         {
             try
