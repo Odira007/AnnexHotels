@@ -70,33 +70,6 @@ namespace AnnexHotels.Data.Repositories
                 .Where(e => e.CompanyId == companyId).ToListAsync();
         }
 
-        public async Task<HotelUpdateDto> UpdateHotelAsync(int hotelId)
-        {
-            // get the hotel to be updated
-            var hotel = await _dbContext.Hotels.Where(e => e.Id == hotelId).FirstOrDefaultAsync();
-
-            // map the hotel to hotelupdatedto
-            var hotelUpdate = new HotelUpdateDto()
-            {
-                Name = hotel.Name,
-                Description = hotel.Description,
-                Status = hotel.Status
-            };
-
-            // update the hotel property values - basically copying the updateDto values into the retrieved hotel's
-            // values
-            hotel.Name = hotelUpdate.Name;
-            hotel.Status = hotelUpdate.Status;
-            hotel.Description = hotelUpdate.Description;
-
-            return hotelUpdate;
-        }
-
-        public Task UpdatePartialHotelAsync(int hotelId)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> CheckHotelExists(int hotelId)
         {
             var hotel = await _dbContext.Hotels.FirstOrDefaultAsync(e => e.Id == hotelId);

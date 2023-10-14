@@ -10,8 +10,9 @@ using AnnexHotels.Models;
 
 namespace AnnexHotels.Dtos.HotelDto
 {
-    public class HotelCreationDto : BaseEntityForDtos
+    public class HotelCreationDto
     {
+        public string Name { get; set; }
         public Status Status { get; set; }
         public string Description { get; set; }
         public ICollection<RoomRequestDto> RoomRequestDtos { get; }

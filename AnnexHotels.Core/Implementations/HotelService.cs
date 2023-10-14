@@ -3,6 +3,7 @@ using AnnexHotels.Data.Interfaces;
 using AnnexHotels.Dtos.HotelDto;
 using AnnexHotels.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,37 @@ namespace AnnexHotels.Core.Implementations
             var hotelDto = _mapper.Map<HotelRequestDto>(hotelToBeCreated);
 
             return hotelDto;
+        }
+
+        public async Task UpdateHotelAsync(int hotelId, HotelUpdateDto hotel)
+        {
+            // get the hotel to be updated
+            var hotelEntity = await _hotelRepository.GetHotelByIdAsync(hotelId, false);
+
+            if (hotelEntity == null)
+            {
+                // log "hotel with the id {id} could not be found"
+            }
+
+            _mapper.Map(hotel, hotelEntity);
+
+            await _hotelRepository.SaveChangesAsync();
+        }
+
+        public async Task UpdatePartialHotelAsync(int hotelId, JsonPatchDocument<HotelUpdateDto> patchDocument)
+        {
+            var hotelEntity = await _hotelRepository.GetHotelByIdAsync(hotelId, false);
+            if (hotelEntity == null)
+            {
+                // log error
+            }
+
+            var hotelToPatch = _mapper.Map<HotelUpdateDto>(hotelEntity);
+            patchDocument.ApplyTo(hotelToPatch);
+
+            _mapper.Map(hotelToPatch, hotelEntity);
+
+            await _hotelRepository.SaveChangesAsync();
         }
     }
 }

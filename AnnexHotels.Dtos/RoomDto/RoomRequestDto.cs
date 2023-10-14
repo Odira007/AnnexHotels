@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AnnexHotels.Dtos.RoomDto
 {
-    public class RoomRequestDto : BaseEntityForDtos
+    public class RoomRequestDto
     {
         public string RoomNumber { get; set; }
         public string RoomType { get; set; }

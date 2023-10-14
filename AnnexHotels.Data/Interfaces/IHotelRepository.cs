@@ -16,8 +16,6 @@ namespace AnnexHotels.Data.Interfaces
         Task<Hotel> GetHotelByCompanyIdAsync(int companyId, int hotelId);
         Task AddHotelAsync(Hotel hotel);
         Task AddHotelByCompanyIdAsync(int companyId, Hotel hotel);
-        Task<HotelUpdateDto> UpdateHotelAsync(int hotelId);
-        Task UpdatePartialHotelAsync(int hotelId);
         Task DeleteHotelAsync(int hotelId);
         Task<bool> CheckHotelExists(int hotelId);
         Task<bool> CheckCompanyExists(int companyId);

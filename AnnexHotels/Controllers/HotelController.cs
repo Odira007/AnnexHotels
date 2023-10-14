@@ -1,6 +1,7 @@
 ﻿using AnnexHotels.Core.Interfaces;
 using AnnexHotels.Dtos.HotelDto;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AnnexHotels.Controllers
 {
-    [Route("api/companies/{companyId}/hotels")]
+    [Route("api/hotels")]
     [ApiController]
     public class HotelController : ControllerBase
     {
@@ -29,7 +30,18 @@ namespace AnnexHotels.Controllers
         [HttpGet("{hotelId}")]
         public async Task<ActionResult<HotelWithoutRoomsDto>> GetHotelById(int hotelId, bool includeRooms)
         {
-            return Ok(await _hotelService.GetHotelById(hotelId, includeRooms));
+            var hotel = await _hotelService.GetHotelById(hotelId, includeRooms);
+
+            if (hotel == null)
+            {
+                return NotFound();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return hotel;
         }
 
         [HttpPost]
@@ -43,6 +55,43 @@ namespace AnnexHotels.Controllers
                     hotelId = finalHotelCreated.Id
                 },
                 finalHotelCreated);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> UpdateHotel(int hotelId, HotelUpdateDto hotel)
+        {
+            try
+            {
+                await _hotelService.UpdateHotelAsync(hotelId, hotel);
+            }
+            catch(ArgumentNullException)
+            {
+                return BadRequest(ModelState);
+            }
+            catch(Exception)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
+        }
+
+        public async Task<ActionResult> UpdatePartialHotelAsync(int hotelId, JsonPatchDocument<HotelUpdateDto> patchDocument)
+        {
+            try
+            {
+                await _hotelService.UpdatePartialHotelAsync(hotelId, patchDocument);
+            }
+            catch (ArgumentNullException)
+            {
+                return BadRequest(ModelState);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
     }
 }

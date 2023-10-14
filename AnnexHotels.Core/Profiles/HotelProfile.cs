@@ -14,6 +14,9 @@ namespace AnnexHotels.Core.Profiles
         public HotelProfile()
         {
             CreateMap<Hotel, HotelWithoutRoomsDto>();
+            CreateMap<HotelCreationDto, HotelRequestDto>();
+            CreateMap<HotelUpdateDto, Hotel>();
+            CreateMap<Hotel, HotelUpdateDto>();
         }
     }
 }
