@@ -57,7 +57,7 @@ namespace AnnexHotels.Controllers
                 finalHotelCreated);
         }
 
-        [HttpPut]
+        [HttpPut("{hotelId}")]
         public async Task<ActionResult> UpdateHotel(int hotelId, HotelUpdateDto hotel)
         {
             try
@@ -76,8 +76,8 @@ namespace AnnexHotels.Controllers
             return NoContent();
         }
 
-        [HttpPatch]
-        public async Task<ActionResult> UpdatePartialHotelAsync(int hotelId, JsonPatchDocument<HotelUpdateDto> patchDocument)
+        [HttpPatch("{hotelId}")]
+        public async Task<ActionResult> UpdatePartialHotel(int hotelId, JsonPatchDocument<HotelUpdateDto> patchDocument)
         {
             try
             {

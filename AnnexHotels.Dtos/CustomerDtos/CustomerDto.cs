@@ -1,4 +1,4 @@
-﻿using AnnexHotels.Dtos.BookingDto;
+﻿using AnnexHotels.Dtos.BookingDtos;
 using AnnexHotels.Models;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnnexHotels.Dtos.CustomerDto
+namespace AnnexHotels.Dtos.CustomerDtos
 {
-    public class CustomerCreationDto
+    public class CustomerDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,7 +18,7 @@ namespace AnnexHotels.Dtos.CustomerDto
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public ICollection<BookingRequestDto> BookingRequestDtos { get; set; } = 
-            new List<BookingRequestDto>();
+        public ICollection<BookingDto> BookingRequestDtos { get; set; } =
+            new List<BookingDto>();
     }
 }

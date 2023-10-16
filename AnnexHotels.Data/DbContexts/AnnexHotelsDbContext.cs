@@ -124,6 +124,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 40000,
                         IsBooked = true,
                         HotelId = 2,
+                        BookingId = 1
                     },
                     new Room()
                     {
@@ -133,6 +134,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 45000,
                         IsBooked = true,
                         HotelId = 4,
+                        BookingId = 4
                     },
                     new Room()
                     {
@@ -142,6 +144,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 60000,
                         IsBooked = false,
                         HotelId = 2,
+                        BookingId = 3
                     },
                     new Room()
                     {
@@ -151,6 +154,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 35000,
                         IsBooked = true,
                         HotelId = 1,
+                        BookingId = 4
                     },
                     new Room()
                     {
@@ -160,6 +164,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 40000,
                         IsBooked = false,
                         HotelId = 5,
+                        BookingId = 2
                     },
                     new Room()
                     {
@@ -169,6 +174,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 45000,
                         IsBooked = false,
                         HotelId = 3,
+                        BookingId = 3
                     },
                     new Room()
                     {
@@ -178,6 +184,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 52000,
                         IsBooked = false,
                         HotelId = 5,
+                        BookingId = 4
                     },
                     new Room()
                     {
@@ -187,6 +194,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 40000,
                         IsBooked = true,
                         HotelId = 2,
+                        BookingId = 1
                     },
                     new Room()
                     {
@@ -196,6 +204,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 36000,
                         IsBooked = false,
                         HotelId = 4,
+                        BookingId = 6
                     },
                     new Room()
                     {
@@ -205,6 +214,7 @@ namespace AnnexHotels.Data.DbContexts
                         PricePerDay = 35000,
                         IsBooked = false,
                         HotelId = 1,
+                        BookingId = 5
                     }
                 );
 
@@ -260,30 +270,49 @@ namespace AnnexHotels.Data.DbContexts
                     {
                         Id = 1,
                         CustomerId = 3,
-                        CheckOutDate = DateTime.Now.AddDays(5)
+                        HotelId = 1,
+                        BookingStatus = BookingStatus.Completed,
+                        CheckOutDate = DateTime.Now.AddDays(5),
+
                     },
                     new Booking()
                     {
                         Id = 2,
                         CustomerId = 1,
+                        HotelId = 1,
+                        BookingStatus = BookingStatus.Completed,
                         CheckOutDate = DateTime.Now.AddDays(7)
                     },
                     new Booking()
                     {
                         Id = 3,
                         CustomerId = 2,
+                        HotelId = 3,
+                        BookingStatus = BookingStatus.Completed,
                         CheckOutDate = DateTime.Now.AddDays(14)
                     },
                     new Booking()
                     {
                         Id = 4,
                         CustomerId = 4,
+                        HotelId = 5,
+                        BookingStatus = BookingStatus.Pending,
                         CheckOutDate = DateTime.Now.AddDays(6)
                     },
                     new Booking()
                     {
                         Id = 5,
                         CustomerId = 3,
+                        HotelId = 4,
+                        BookingStatus = BookingStatus.Completed,
+                        CheckOutDate = DateTime.Now.AddDays(9)
+                    },
+                    new Booking()
+                    {
+                        Id = 6,
+                        CustomerId = 2,
+                        HotelId = 2,
+                        BookingStatus = BookingStatus.Pending,
                         CheckOutDate = DateTime.Now.AddDays(9)
                     }
                 );
