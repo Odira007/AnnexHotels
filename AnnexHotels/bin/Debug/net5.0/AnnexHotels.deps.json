@@ -1604,6 +1604,7 @@
         "dependencies": {
           "AnnexHotels.Dtos": "1.0.0",
           "AnnexHotels.Models": "1.0.0",
+          "AnnexHotels.Utilities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17"
         },
@@ -1631,6 +1632,14 @@
         },
         "compile": {
           "AnnexHotels.Models.dll": {}
+        }
+      },
+      "AnnexHotels.Utilities/1.0.0": {
+        "runtime": {
+          "AnnexHotels.Utilities.dll": {}
+        },
+        "compile": {
+          "AnnexHotels.Utilities.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4159,6 +4168,11 @@
       "sha512": ""
     },
     "AnnexHotels.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AnnexHotels.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

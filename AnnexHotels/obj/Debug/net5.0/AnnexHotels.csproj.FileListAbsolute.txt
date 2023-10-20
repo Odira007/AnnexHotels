@@ -85,3 +85,5 @@ C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\ne
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\Serilog.Sinks.Console.dll
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\Serilog.Sinks.File.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.Utilities.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels\bin\Debug\net5.0\AnnexHotels.Utilities.pdb

@@ -21,16 +21,9 @@ namespace AnnexHotels.Models
         public Hotel Hotel { get; set; }
         public int? HotelId { get; set; }
         public BookingStatus BookingStatus { get; set; }
-        public decimal TotalPrice { get => ReservedRooms.Sum(e => e.PricePerDay); }
-        public decimal Discount { get => TotalPrice * (10 / 100); }
-        public decimal Cost
-        {
-            get
-            {
-                TimeSpan duration = CheckOutDate - CheckInDate;
-                return duration.Days * (TotalPrice - Discount);
-            }
-        }
+        public decimal TotalPrice { get; set; }
+        public decimal Discount { get; set; }
+        public decimal Cost { get; set; }
         public ICollection<Room> ReservedRooms { get; set; } = new List<Room>();
     }
 }

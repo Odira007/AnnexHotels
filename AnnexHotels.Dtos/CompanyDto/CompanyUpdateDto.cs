@@ -13,7 +13,5 @@ namespace AnnexHotels.Dtos.CompanyDto
         public string Description { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public ICollection<HotelRequestDto> HotelRequestDtos { get; set; } =
-            new List<HotelRequestDto>();
     }
 }

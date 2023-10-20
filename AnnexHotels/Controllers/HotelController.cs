@@ -48,13 +48,8 @@ namespace AnnexHotels.Controllers
         public async Task<ActionResult<HotelRequestDto>> CreateHotel(int companyId, HotelCreationDto hotel)
         {
             var finalHotelCreated = await _hotelService.AddHotel(companyId, hotel);
-            return CreatedAtRoute("GetHotelById",
-                new
-                {
-                    companyId = companyId,
-                    hotelId = finalHotelCreated.Id
-                },
-                finalHotelCreated);
+
+            return Ok(finalHotelCreated);
         }
 
         [HttpPut("{hotelId}")]

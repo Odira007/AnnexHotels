@@ -17,3 +17,5 @@ C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Core\bin\Deb
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Core\bin\Debug\net5.0\AnnexHotels.Dtos.pdb
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Core\bin\Debug\net5.0\AnnexHotels.Models.pdb
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Core\obj\Debug\net5.0\AnnexHotels.Core.csproj.CopyComplete
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Core\bin\Debug\net5.0\AnnexHotels.Utilities.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Core\bin\Debug\net5.0\AnnexHotels.Utilities.pdb

@@ -97,11 +97,7 @@ namespace AnnexHotels.Data.Repositories
 
         public async Task<bool> SaveChangesAsync()
         {
-            if (await _dbContext.SaveChangesAsync() > 0)
-            {
-                return true;
-            }
-            return false;
+            return await _dbContext.SaveChangesAsync() >= 0;
         }
     }
 }

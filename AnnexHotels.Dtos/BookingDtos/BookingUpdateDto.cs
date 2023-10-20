@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnnexHotels.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace AnnexHotels.Dtos.BookingDtos
     {
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
+        public BookingStatus bookingStatus { get; set; }
     }
 }

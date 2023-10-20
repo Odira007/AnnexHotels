@@ -18,3 +18,5 @@ C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Data\obj\Deb
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Data\obj\Debug\net5.0\AnnexHotels.Data.genruntimeconfig.cache
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Data\bin\Debug\net5.0\AnnexHotels.Dtos.dll
 C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Data\bin\Debug\net5.0\AnnexHotels.Dtos.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Data\bin\Debug\net5.0\AnnexHotels.Utilities.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels.Data\bin\Debug\net5.0\AnnexHotels.Utilities.pdb

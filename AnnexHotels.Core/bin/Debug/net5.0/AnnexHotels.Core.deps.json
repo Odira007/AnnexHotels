@@ -1106,6 +1106,7 @@
         "dependencies": {
           "AnnexHotels.Dtos": "1.0.0",
           "AnnexHotels.Models": "1.0.0",
+          "AnnexHotels.Utilities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17"
         },
@@ -1124,6 +1125,11 @@
       "AnnexHotels.Models/1.0.0": {
         "runtime": {
           "AnnexHotels.Models.dll": {}
+        }
+      },
+      "AnnexHotels.Utilities/1.0.0": {
+        "runtime": {
+          "AnnexHotels.Utilities.dll": {}
         }
       }
     }
@@ -1929,6 +1935,11 @@
       "sha512": ""
     },
     "AnnexHotels.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AnnexHotels.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

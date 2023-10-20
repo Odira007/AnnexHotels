@@ -24,23 +24,25 @@ namespace AnnexHotels.Models
 
         [Required]
         [MaxLength(100)]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
-        [Required]
         [MaxLength(25)]
         [MinLength(8)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required]
         [MaxLength(25)]
         [MinLength(8)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
+
+        public string Salt { get; set; }
+        public string SaltHashedPassword { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     }

@@ -55,7 +55,7 @@ namespace AnnexHotels.Data.Migrations
                             Id = 1,
                             BookingStatus = 1,
                             CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutDate = new DateTime(2023, 10, 21, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(7495),
+                            CheckOutDate = new DateTime(2023, 10, 24, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(5944),
                             CustomerId = 3,
                             HotelId = 1
                         },
@@ -64,7 +64,7 @@ namespace AnnexHotels.Data.Migrations
                             Id = 2,
                             BookingStatus = 1,
                             CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutDate = new DateTime(2023, 10, 23, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(8176),
+                            CheckOutDate = new DateTime(2023, 10, 26, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7068),
                             CustomerId = 1,
                             HotelId = 1
                         },
@@ -73,7 +73,7 @@ namespace AnnexHotels.Data.Migrations
                             Id = 3,
                             BookingStatus = 1,
                             CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutDate = new DateTime(2023, 10, 30, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(8198),
+                            CheckOutDate = new DateTime(2023, 11, 2, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7094),
                             CustomerId = 2,
                             HotelId = 3
                         },
@@ -82,7 +82,7 @@ namespace AnnexHotels.Data.Migrations
                             Id = 4,
                             BookingStatus = 0,
                             CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutDate = new DateTime(2023, 10, 22, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(8201),
+                            CheckOutDate = new DateTime(2023, 10, 25, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7098),
                             CustomerId = 4,
                             HotelId = 5
                         },
@@ -91,7 +91,7 @@ namespace AnnexHotels.Data.Migrations
                             Id = 5,
                             BookingStatus = 1,
                             CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutDate = new DateTime(2023, 10, 25, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(8204),
+                            CheckOutDate = new DateTime(2023, 10, 28, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7101),
                             CustomerId = 3,
                             HotelId = 4
                         },
@@ -100,7 +100,7 @@ namespace AnnexHotels.Data.Migrations
                             Id = 6,
                             BookingStatus = 0,
                             CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutDate = new DateTime(2023, 10, 25, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(8206),
+                            CheckOutDate = new DateTime(2023, 10, 28, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7142),
                             CustomerId = 2,
                             HotelId = 2
                         });
@@ -137,7 +137,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 270, DateTimeKind.Local).AddTicks(6774),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 898, DateTimeKind.Local).AddTicks(964),
                             Description = "Crafting serenity and luxury in nature's embrace",
                             Email = "aplinerc@gmailcom",
                             Name = "Alpine Retreats Corporation",
@@ -146,7 +146,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 272, DateTimeKind.Local).AddTicks(1470),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 899, DateTimeKind.Local).AddTicks(9719),
                             Description = "Redefining urban hospitality with a blend of style and relaxation",
                             Email = "metrocomfortco@gmailcom",
                             Name = "Metropolitan Comfort Co.",
@@ -155,7 +155,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 272, DateTimeKind.Local).AddTicks(1512),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 899, DateTimeKind.Local).AddTicks(9800),
                             Description = "Your gateway to coastal elegance and relaxation",
                             Email = "gazagroup@gmailcom",
                             Name = "Gaza group",
@@ -171,7 +171,6 @@ namespace AnnexHotels.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ConfirmPassword")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
@@ -194,12 +193,17 @@ namespace AnnexHotels.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SaltHashedPassword")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -211,7 +215,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 1,
                             ConfirmPassword = "sarah#$34",
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 272, DateTimeKind.Local).AddTicks(9661),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(3697),
                             Email = "sarahandersen@gmail.com",
                             FirstName = "Sarah",
                             LastName = "Andersen",
@@ -222,7 +226,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 2,
                             ConfirmPassword = "john#$34",
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(3971),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(9641),
                             Email = "johnfreeman@gmail.com",
                             FirstName = "John",
                             LastName = "Freeman",
@@ -233,7 +237,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 3,
                             ConfirmPassword = "chibueze#$34",
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(3995),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(9695),
                             Email = "chibuezeokpara@gmail.com",
                             FirstName = "Chibueze",
                             LastName = "Okpara",
@@ -244,7 +248,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 4,
                             ConfirmPassword = "lisa#$34",
-                            CreatedAt = new DateTime(2023, 10, 16, 10, 8, 43, 273, DateTimeKind.Local).AddTicks(4002),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(9721),
                             Email = "lisahendrix@gmail.com",
                             FirstName = "Lisa",
                             LastName = "Hendrix",

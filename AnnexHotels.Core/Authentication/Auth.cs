@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AnnexHotels.Core.Authentication
 {
-    class Login
+    public class Auth
     {
+        
     }
 }

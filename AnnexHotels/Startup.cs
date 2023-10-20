@@ -52,6 +52,10 @@ namespace AnnexHotels
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IBookingRepository, BookingRepository>();
             services.AddScoped<IBookingService, BookingService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddScoped<IRoomService, RoomService>();
 
             services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>

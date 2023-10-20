@@ -61,7 +61,6 @@ namespace AnnexHotels.Core.Implementations
 
         public async Task UpdateHotelAsync(int hotelId, HotelUpdateDto hotel)
         {
-            // get the hotel to be updated
             var hotelEntity = await _hotelRepository.GetHotelByIdAsync(hotelId, false);
 
             if (hotelEntity == null)

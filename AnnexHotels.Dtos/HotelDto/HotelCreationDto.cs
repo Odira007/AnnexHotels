@@ -15,7 +15,7 @@ namespace AnnexHotels.Dtos.HotelDto
         public string Name { get; set; }
         public Status Status { get; set; }
         public string Description { get; set; }
-        public ICollection<RoomDto> RoomDtos { get; set; } = new List<RoomDto>();
-        
+        public string City { get; set; }
+        public string Country { get; set; }
     }
 }

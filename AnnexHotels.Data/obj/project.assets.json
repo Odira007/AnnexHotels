@@ -1542,6 +1542,16 @@
         "runtime": {
           "bin/placeholder/AnnexHotels.Models.dll": {}
         }
+      },
+      "AnnexHotels.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/AnnexHotels.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnnexHotels.Utilities.dll": {}
+        }
       }
     }
   },
@@ -5820,12 +5830,18 @@
       "type": "project",
       "path": "../AnnexHotels.Models/AnnexHotels.Models.csproj",
       "msbuildProject": "../AnnexHotels.Models/AnnexHotels.Models.csproj"
+    },
+    "AnnexHotels.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../AnnexHotels.Utilities/AnnexHotels.Utilities.csproj",
+      "msbuildProject": "../AnnexHotels.Utilities/AnnexHotels.Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "AnnexHotels.Dtos >= 1.0.0",
       "AnnexHotels.Models >= 1.0.0",
+      "AnnexHotels.Utilities >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.17"
@@ -5863,6 +5879,9 @@
             },
             "C:\\Users\\ODIRA.DESKTOP-II4QM4T\\source\\repos\\AnnexHotels\\AnnexHotels.Models\\AnnexHotels.Models.csproj": {
               "projectPath": "C:\\Users\\ODIRA.DESKTOP-II4QM4T\\source\\repos\\AnnexHotels\\AnnexHotels.Models\\AnnexHotels.Models.csproj"
+            },
+            "C:\\Users\\ODIRA.DESKTOP-II4QM4T\\source\\repos\\AnnexHotels\\AnnexHotels.Utilities\\AnnexHotels.Utilities.csproj": {
+              "projectPath": "C:\\Users\\ODIRA.DESKTOP-II4QM4T\\source\\repos\\AnnexHotels\\AnnexHotels.Utilities\\AnnexHotels.Utilities.csproj"
             }
           }
         }
