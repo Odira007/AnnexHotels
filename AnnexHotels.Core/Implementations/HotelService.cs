@@ -4,6 +4,7 @@ using AnnexHotels.Dtos.HotelDto;
 using AnnexHotels.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,13 @@ namespace AnnexHotels.Core.Implementations
     {
         private readonly IHotelRepository _hotelRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<HotelService> _logger;
 
-        public HotelService(IHotelRepository hotelRepository, IMapper mapper)
+        public HotelService(IHotelRepository hotelRepository, IMapper mapper, ILogger<HotelService> logger)
         {
             _hotelRepository = hotelRepository ?? throw new ArgumentNullException(nameof(hotelRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public async Task<IEnumerable<HotelWithoutRoomsDto>> GetHotels()
@@ -45,8 +48,7 @@ namespace AnnexHotels.Core.Implementations
 
             if (!await _hotelRepository.CheckCompanyExists(companyId))
             {
-                // to be replaced with logging
-                throw new Exception("Company does not exist");
+                _logger.LogInformation($"The company with the Id: {companyId} could not be found");
             }
 
             await _hotelRepository.AddHotelByCompanyIdAsync(companyId, hotelToBeCreated);
@@ -59,12 +61,11 @@ namespace AnnexHotels.Core.Implementations
 
         public async Task UpdateHotelAsync(int hotelId, HotelUpdateDto hotel)
         {
-            // get the hotel to be updated
             var hotelEntity = await _hotelRepository.GetHotelByIdAsync(hotelId, false);
 
             if (hotelEntity == null)
             {
-                // log "hotel with the id {id} could not be found"
+                _logger.LogInformation($"The hotel with the Id: {hotelId} could not be found");
             }
 
             _mapper.Map(hotel, hotelEntity);
@@ -77,7 +78,7 @@ namespace AnnexHotels.Core.Implementations
             var hotelEntity = await _hotelRepository.GetHotelByIdAsync(hotelId, false);
             if (hotelEntity == null)
             {
-                // log error
+                _logger.LogInformation($"The hotel with the Id: {hotelId} could not be found");
             }
 
             var hotelToPatch = _mapper.Map<HotelUpdateDto>(hotelEntity);

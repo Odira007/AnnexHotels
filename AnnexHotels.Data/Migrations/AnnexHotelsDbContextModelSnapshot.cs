@@ -26,6 +26,9 @@ namespace AnnexHotels.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("BookingStatus")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CheckInDate")
                         .HasColumnType("datetime2");
 
@@ -50,37 +53,56 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CheckInDate = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(5024),
-                            CheckOutDate = new DateTime(2023, 10, 18, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(5949),
-                            CustomerId = 3
+                            BookingStatus = 1,
+                            CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOutDate = new DateTime(2023, 10, 24, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(5944),
+                            CustomerId = 3,
+                            HotelId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CheckInDate = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6634),
-                            CheckOutDate = new DateTime(2023, 10, 20, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6647),
-                            CustomerId = 1
+                            BookingStatus = 1,
+                            CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOutDate = new DateTime(2023, 10, 26, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7068),
+                            CustomerId = 1,
+                            HotelId = 1
                         },
                         new
                         {
                             Id = 3,
-                            CheckInDate = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6659),
-                            CheckOutDate = new DateTime(2023, 10, 27, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6661),
-                            CustomerId = 2
+                            BookingStatus = 1,
+                            CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOutDate = new DateTime(2023, 11, 2, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7094),
+                            CustomerId = 2,
+                            HotelId = 3
                         },
                         new
                         {
                             Id = 4,
-                            CheckInDate = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6663),
-                            CheckOutDate = new DateTime(2023, 10, 19, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6665),
-                            CustomerId = 4
+                            BookingStatus = 0,
+                            CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOutDate = new DateTime(2023, 10, 25, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7098),
+                            CustomerId = 4,
+                            HotelId = 5
                         },
                         new
                         {
                             Id = 5,
-                            CheckInDate = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6666),
-                            CheckOutDate = new DateTime(2023, 10, 22, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(6669),
-                            CustomerId = 3
+                            BookingStatus = 1,
+                            CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOutDate = new DateTime(2023, 10, 28, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7101),
+                            CustomerId = 3,
+                            HotelId = 4
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BookingStatus = 0,
+                            CheckInDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOutDate = new DateTime(2023, 10, 28, 11, 43, 14, 904, DateTimeKind.Local).AddTicks(7142),
+                            CustomerId = 2,
+                            HotelId = 2
                         });
                 });
 
@@ -115,7 +137,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 527, DateTimeKind.Local).AddTicks(9895),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 898, DateTimeKind.Local).AddTicks(964),
                             Description = "Crafting serenity and luxury in nature's embrace",
                             Email = "aplinerc@gmailcom",
                             Name = "Alpine Retreats Corporation",
@@ -124,7 +146,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 530, DateTimeKind.Local).AddTicks(3582),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 899, DateTimeKind.Local).AddTicks(9719),
                             Description = "Redefining urban hospitality with a blend of style and relaxation",
                             Email = "metrocomfortco@gmailcom",
                             Name = "Metropolitan Comfort Co.",
@@ -133,7 +155,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 530, DateTimeKind.Local).AddTicks(3627),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 899, DateTimeKind.Local).AddTicks(9800),
                             Description = "Your gateway to coastal elegance and relaxation",
                             Email = "gazagroup@gmailcom",
                             Name = "Gaza group",
@@ -149,7 +171,6 @@ namespace AnnexHotels.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ConfirmPassword")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
@@ -172,12 +193,17 @@ namespace AnnexHotels.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SaltHashedPassword")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -189,7 +215,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 1,
                             ConfirmPassword = "sarah#$34",
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 530, DateTimeKind.Local).AddTicks(9964),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(3697),
                             Email = "sarahandersen@gmail.com",
                             FirstName = "Sarah",
                             LastName = "Andersen",
@@ -200,7 +226,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 2,
                             ConfirmPassword = "john#$34",
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(3562),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(9641),
                             Email = "johnfreeman@gmail.com",
                             FirstName = "John",
                             LastName = "Freeman",
@@ -211,7 +237,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 3,
                             ConfirmPassword = "chibueze#$34",
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(3580),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(9695),
                             Email = "chibuezeokpara@gmail.com",
                             FirstName = "Chibueze",
                             LastName = "Okpara",
@@ -222,7 +248,7 @@ namespace AnnexHotels.Data.Migrations
                         {
                             Id = 4,
                             ConfirmPassword = "lisa#$34",
-                            CreatedAt = new DateTime(2023, 10, 13, 15, 5, 24, 531, DateTimeKind.Local).AddTicks(3583),
+                            CreatedAt = new DateTime(2023, 10, 19, 11, 43, 14, 903, DateTimeKind.Local).AddTicks(9721),
                             Email = "lisahendrix@gmail.com",
                             FirstName = "Lisa",
                             LastName = "Hendrix",
@@ -357,6 +383,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 1,
+                            BookingId = 1,
                             HotelId = 2,
                             IsBooked = true,
                             PricePerDay = 40000m,
@@ -366,6 +393,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 2,
+                            BookingId = 4,
                             HotelId = 4,
                             IsBooked = true,
                             PricePerDay = 45000m,
@@ -375,6 +403,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 3,
+                            BookingId = 3,
                             HotelId = 2,
                             IsBooked = false,
                             PricePerDay = 60000m,
@@ -384,6 +413,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 4,
+                            BookingId = 4,
                             HotelId = 1,
                             IsBooked = true,
                             PricePerDay = 35000m,
@@ -393,6 +423,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 5,
+                            BookingId = 2,
                             HotelId = 5,
                             IsBooked = false,
                             PricePerDay = 40000m,
@@ -402,6 +433,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 6,
+                            BookingId = 3,
                             HotelId = 3,
                             IsBooked = false,
                             PricePerDay = 45000m,
@@ -411,6 +443,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 7,
+                            BookingId = 4,
                             HotelId = 5,
                             IsBooked = false,
                             PricePerDay = 52000m,
@@ -420,6 +453,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 8,
+                            BookingId = 1,
                             HotelId = 2,
                             IsBooked = true,
                             PricePerDay = 40000m,
@@ -429,6 +463,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 9,
+                            BookingId = 6,
                             HotelId = 4,
                             IsBooked = false,
                             PricePerDay = 36000m,
@@ -438,6 +473,7 @@ namespace AnnexHotels.Data.Migrations
                         new
                         {
                             Id = 10,
+                            BookingId = 5,
                             HotelId = 1,
                             IsBooked = false,
                             PricePerDay = 35000m,
@@ -454,11 +490,13 @@ namespace AnnexHotels.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AnnexHotels.Models.Hotel", null)
+                    b.HasOne("AnnexHotels.Models.Hotel", "Hotel")
                         .WithMany("Bookings")
                         .HasForeignKey("HotelId");
 
                     b.Navigation("Customer");
+
+                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("AnnexHotels.Models.Hotel", b =>
@@ -474,7 +512,7 @@ namespace AnnexHotels.Data.Migrations
 
             modelBuilder.Entity("AnnexHotels.Models.Room", b =>
                 {
-                    b.HasOne("AnnexHotels.Models.Booking", null)
+                    b.HasOne("AnnexHotels.Models.Booking", "Booking")
                         .WithMany("ReservedRooms")
                         .HasForeignKey("BookingId");
 
@@ -483,6 +521,8 @@ namespace AnnexHotels.Data.Migrations
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Booking");
 
                     b.Navigation("Hotel");
                 });

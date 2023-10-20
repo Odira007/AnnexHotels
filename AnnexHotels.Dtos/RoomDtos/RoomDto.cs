@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnnexHotels.Dtos.RoomDto
+namespace AnnexHotels.Dtos.RoomDtos
 {
-    public class RoomRequestDto
+    public class RoomDto
     {
         public string RoomNumber { get; set; }
         public string RoomType { get; set; }

@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace AnnexHotels.Dtos.CompanyDto
 {
-    public class CompanyCreationDto : BaseEntityForDtos
+    public class CompanyCreationDto
     {
+        public string Name { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public ICollection<HotelRequestDto> HotelRequestDtos { get; set; } = 
-            new List<HotelRequestDto>();
     }
 }

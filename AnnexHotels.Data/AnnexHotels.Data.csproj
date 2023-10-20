@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AnnexHotels.Dtos\AnnexHotels.Dtos.csproj" />
     <ProjectReference Include="..\AnnexHotels.Models\AnnexHotels.Models.csproj" />
+    <ProjectReference Include="..\AnnexHotels.Utilities\AnnexHotels.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

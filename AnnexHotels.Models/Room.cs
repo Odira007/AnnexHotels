@@ -21,5 +21,7 @@ namespace AnnexHotels.Models
         public bool IsBooked { get; set; }
         public Hotel Hotel { get; set; }
         public int HotelId { get; set; }
+        public Booking Booking { get; set; }
+        public int? BookingId { get; set; }
     }
 }

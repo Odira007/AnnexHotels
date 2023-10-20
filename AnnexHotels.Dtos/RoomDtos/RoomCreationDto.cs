@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnnexHotels.Dtos.RoomDto
+namespace AnnexHotels.Dtos.RoomDtos
 {
     public class RoomCreationDto
     {
