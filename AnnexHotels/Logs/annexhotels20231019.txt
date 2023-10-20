@@ -644,3 +644,8 @@ SELECT TOP(1) [c].[Id], [c].[ConfirmPassword], [c].[CreatedAt], [c].[Email], [c]
 FROM [Customers] AS [c]
 WHERE [c].[Id] = @__customerId_0
 2023-10-19 14:09:06.573 +01:00 [INF] The customer with the Id: 23 could not be found
+2023-10-19 17:58:42.574 +01:00 [INF] Now listening on: https://localhost:5001
+2023-10-19 17:58:43.369 +01:00 [INF] Now listening on: http://localhost:5000
+2023-10-19 17:58:43.389 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 17:58:43.395 +01:00 [INF] Hosting environment: Development
+2023-10-19 17:58:43.403 +01:00 [INF] Content root path: C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\AnnexHotels\AnnexHotels
